@@ -7,12 +7,18 @@ import Sourozenec2 from './../Sourozenec2';
 
 const Rodic = () => {
 
+	const [zprava, setZprava] = useState(null);
+
+	const predejVzkaz = (vzkaz) => {
+		setZprava(vzkaz)
+	}
+
 	return (
 		<div className="rodic">
 			<h3>Rodič</h3>
 
-			<Dite />
-			<Dite />
+			<Sourozenec1 onVzkaz={predejVzkaz}/>
+			<Sourozenec2 zprava={zprava} />
 
 		</div>
 	)
